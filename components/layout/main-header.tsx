@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react'
 
 import { navItems } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import { ThemeToggle } from '@/components/theme-toggle'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -45,6 +46,7 @@ export function MainHeader() {
 
         {/* Call-to-Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
+          <ThemeToggle />
           <Button asChild variant="outline" className="font-medium">
             <Link href="/member-portal">Member Portal</Link>
           </Button>
@@ -54,17 +56,20 @@ export function MainHeader() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          {isOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
+        <div className="flex items-center space-x-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            {isOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
