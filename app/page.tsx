@@ -74,8 +74,6 @@ export default function Home() {
         </div>
       </section>
       
-     
-      
       {/* Schemes Section */}
       <section className="py-20">
         <div className="container-custom">
@@ -93,26 +91,26 @@ export default function Home() {
                           scheme.icon === 'Landmark' ? Landmark : Briefcase
               
               return (
-                <Card key={scheme.id} className="card-hover border-border/50">
+                <Card key={scheme.id} className="feature-card card-hover">
                   <CardHeader>
-                    <div className="bg-primary/10 p-3 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
-                      <Icon className="h-6 w-6 text-primary" />
+                    <div className="feature-icon-bg p-3 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <CardTitle>{scheme.title}</CardTitle>
+                    <CardTitle className="text-white">{scheme.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{scheme.description}</p>
+                    <p className="text-white/80 mb-4">{scheme.description}</p>
                     <ul className="space-y-2">
                       {scheme.benefits.map((benefit, index) => (
                         <li key={index} className="flex items-start">
-                          <span className="text-accent mr-2">•</span>
-                          <span className="text-sm">{benefit}</span>
+                          <span className="text-white mr-2">•</span>
+                          <span className="text-white/80">{benefit}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="outline" className="w-full group">
+                    <Button asChild variant="outline" className="w-full feature-button group">
                       <Link href={`/schemes/${scheme.id}`} className="flex items-center justify-center">
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -127,7 +125,7 @@ export default function Home() {
       </section>
       
       {/* Features Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -149,79 +147,59 @@ export default function Home() {
               </p>
               
               <div className="grid grid-cols-1 gap-6 mt-8">
-                <div className="flex gap-4">
-                  <div className="bg-primary/10 p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
-                    <Calculator className="h-5 w-5 text-primary" />
+                <div className="feature-card flex gap-4">
+                  <div className="feature-icon-bg p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
+                    <Calculator className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Pension Calculator</h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-white/80 text-sm">
                       Plan your retirement with our interactive calculator tool that provides realistic projections.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
-                  <div className="bg-primary/10 p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
-                    <PieChart className="h-5 w-5 text-primary" />
+                <div className="feature-card flex gap-4">
+                  <div className="feature-icon-bg p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
+                    <PieChart className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Investment Strategies</h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-white/80 text-sm">
                       Diverse investment options tailored to your risk profile and retirement timeline.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
-                  <div className="bg-primary/10 p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
-                    <BarChart className="h-5 w-5 text-primary" />
+                <div className="feature-card flex gap-4">
+                  <div className="feature-icon-bg p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
+                    <BarChart className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Fund Performance</h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-white/80 text-sm">
                       Transparent reporting and real-time access to your pension fund performance.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
-                  <div className="bg-primary/10 p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
-                    <Clock className="h-5 w-5 text-primary" />
+                <div className="feature-card flex gap-4">
+                  <div className="feature-icon-bg p-3 h-12 w-12 flex items-center justify-center rounded-lg shrink-0">
+                    <Clock className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-1">Self-Service Portal</h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-white/80 text-sm">
                       24/7 access to your pension information through our secure member portal.
                     </p>
                   </div>
                 </div>
               </div>
               
-              <Button asChild className="mt-4">
+              <Button asChild className="feature-button mt-4">
                 <Link href="/pension-calculator">Try Our Pension Calculator</Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="py-20 gradient-bg text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Secure Your Financial Future?
-          </h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto">
-            Join thousands of Ghanaians who trust Standard Pensions Trust for their retirement planning.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20 hover:text-white">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-              <Link href="/schemes">Explore Our Schemes</Link>
-            </Button>
           </div>
         </div>
       </section>
@@ -243,7 +221,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {blogPosts.map((post) => (
-              <Card key={post.id} className="card-hover border-border/50 overflow-hidden">
+              <Card key={post.id} className="feature-card card-hover overflow-hidden">
                 <div className="relative h-48">
                   <Image 
                     src={post.image}
@@ -254,21 +232,21 @@ export default function Home() {
                 </div>
                 <CardHeader>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs font-medium text-accent bg-accent/10 px-2 py-1 rounded-full">
+                    <span className="text-xs font-medium bg-white/20 px-2 py-1 rounded-full">
                       {post.category}
                     </span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-xs text-white/80">
                       {formatDate(post.date)}
                     </span>
                   </div>
-                  <CardTitle className="text-xl">{post.title}</CardTitle>
+                  <CardTitle className="text-white">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm">{post.excerpt}</p>
+                  <p className="text-white/80 text-sm">{post.excerpt}</p>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild variant="ghost" className="w-full justify-start p-0 hover:bg-transparent group">
-                    <Link href={`/media/blog/${post.id}`} className="flex items-center text-accent">
+                  <Button asChild variant="ghost" className="w-full justify-start p-0 hover:bg-transparent group text-white">
+                    <Link href={`/media/blog/${post.id}`} className="flex items-center">
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
@@ -279,7 +257,27 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* CTA Section */}
+      <section className="py-20 gradient-bg text-white">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Secure Your Financial Future?
+          </h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto">
+            Join thousands of Ghanaians who trust Standard Pensions Trust for their retirement planning.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20 hover:text-white">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+              <Link href="/schemes">Explore Our Schemes</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Tailored Pension Solutions Section */}
       <section className="py-16 bg-background">
         <div className="container-custom">
@@ -290,7 +288,6 @@ export default function Home() {
             </p>
             <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
           </div>
-      
       
           <Tabs defaultValue="individual" className="max-w-5xl mx-auto">
             <TabsList className="grid w-full grid-cols-2 mb-8">
@@ -356,14 +353,14 @@ export default function Home() {
         </div>
       </section>
 
-       {/* Why Standard Pensions Trust Section */}
-       <section className="py-20 gradient-bg text-white">
+      {/* Why Standard Pensions Trust Section */}
+      <section className="py-20 gradient-bg text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Why Standard Pensions Trust
           </h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto">
-            Don’t just make a deposit, make an investment today.
+            Don't just make a deposit, make an investment today.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -406,14 +403,13 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-white/80 text-sm">
-                  Our customer-centered approach to service provision enables us to achieve our clients’ objectives, as we are able to understand the needs of our clients better.
+                  Our customer-centered approach to service provision enables us to achieve our clients' objectives, as we are able to understand the needs of our clients better.
                 </p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-      
     </div>
   )
 }
