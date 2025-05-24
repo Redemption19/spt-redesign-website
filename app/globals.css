@@ -112,6 +112,18 @@
   .gradient-bg {
     @apply bg-gradient-to-br from-primary/90 via-primary to-accent/90;
   }
+
+  .feature-card {
+    @apply gradient-bg text-white p-6 rounded-lg shadow-lg;
+  }
+  
+  .feature-icon-bg {
+    @apply bg-white/20 text-white;
+  }
+  
+  .feature-button {
+    @apply bg-white text-primary hover:bg-white/90 transition-colors;
+  }
   
   .input-field {
     @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
